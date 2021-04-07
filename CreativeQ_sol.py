@@ -45,5 +45,5 @@ piRecursion22 = lambda infinite : generalTermOfTaylorPi(0)[1][1] if infinite==0 
 
 ePoweredByPimatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylorPi(0) if infinite11==0 else generalTermOfTaylorPi(infinite11)[0][0]+piRecursion11(infinite11-1))(infinity), (lambda infinite12 : generalTermOfTaylorPi(0) if infinite12==0 else generalTermOfTaylorPi(infinite12)[0][1]+piRecursion12(infinite12-1))(infinity)], [(lambda infinite21 : generalTermOfTaylorPi(0) if infinite21==0 else generalTermOfTaylorPi(infinite21)[1][0]+piRecursion21(infinite21-1))(infinity), (lambda infinite22 : generalTermOfTaylorPi(0) if infinite22==0 else generalTermOfTaylorPi(infinite22)[1][1]+piRecursion22(infinite22-1))(infinity)]]
 
-print(ePoweredByPimatrix(100))
-print(ePoweredByEmatrix(150))
+goTo = lambda x : [print(ePoweredByPimatrix(i),"\n") for i in x]
+goTo(range(1, 170, 10))

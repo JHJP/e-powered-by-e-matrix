@@ -22,8 +22,6 @@ eRecursion22 = lambda infinite : generalTermOfTaylorE(0)[1][1] if infinite==0 el
 # 테일러급수 e**eMatrix 를 구하는 함수
 ePoweredByEmatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylorE(0) if infinite11==0 else generalTermOfTaylorE(infinite11)[0][0]+eRecursion11(infinite11-1))(infinity), (lambda infinite12 : generalTermOfTaylorE(0) if infinite12==0 else generalTermOfTaylorE(infinite12)[0][1]+eRecursion12(infinite12-1))(infinity)], [(lambda infinite21 : generalTermOfTaylorE(0) if infinite21==0 else generalTermOfTaylorE(infinite21)[1][0]+eRecursion21(infinite21-1))(infinity), (lambda infinite22 : generalTermOfTaylorE(0) if infinite22==0 else generalTermOfTaylorE(infinite22)[1][1]+eRecursion22(infinite22-1))(infinity)]]
 
-print(ePoweredByEmatrix(150))
-
-
-
-
+# e**eMatrix가 근사하는 값을 출력
+goTo = lambda x : [print(ePoweredByEmatrix(i),"\n") for i in x]
+goTo(range(1, 170, 10))
