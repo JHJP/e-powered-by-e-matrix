@@ -24,4 +24,4 @@ ePoweredByEmatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylor
 
 # e**eMatrix가 근사하는 값을 출력
 goTo = lambda x : [print(ePoweredByEmatrix(i),"\n") for i in x]
-goTo(range(1, 170, 10))
+goTo(range(1, 40))
