@@ -1,10 +1,10 @@
 # 피보나치수열을 이용하여 e**[[e,e], [e,e]]를 구하시오
 from functools import reduce
 
-# 오직 자연상수 e만을 갖는 mxn 메트릭스 출력 함수 (풀이과정의 1,2,3을 합침)
+# 오직 자연상수 e만을 갖는 mxn 메트릭스 출력 함수 
 eArrayByLambda = lambda m,n :  [(lambda n :[(lambda infinity: (1+1/(lambda EulerNumber: reduce(lambda x,y:x+y,(lambda numberOfFib: [(lambda elementOfSequence : int( (1/(5**0.5))*(((1+5**0.5)/2)**(elementOfSequence+1)-((1-5**0.5)/2)**(elementOfSequence+1)) ))(i) for i in range(numberOfFib)])(EulerNumber)))(infinity))**(lambda EulerNumber: reduce(lambda x,y:x+y,(lambda numberOfFib: [(lambda elementOfSequence : int( (1/(5**0.5))*(((1+5**0.5)/2)**(elementOfSequence+1)-((1-5**0.5)/2)**(elementOfSequence+1)) ))(i) for i in range(numberOfFib)])(EulerNumber)))(infinity))(30) for j in range(n)])(n) for i in range(m)]
 
-# 매트릭스의 거듭제곱을 출력하는 함수 (풀이과정의 5,6을 합침)
+# 매트릭스의 거듭제곱을 출력하는 함수 
 matrixExponential = lambda matrix, powerNumber: [[1,0],[0,1]] if powerNumber==0 else (lambda matrix1, matrix2 : [(lambda matrix1, matrix2 : [(matrix1[0][0]*matrix2[0][0])+(matrix1[0][1]*matrix2[1][0]), (matrix1[0][0]*matrix2[0][1])+(matrix1[0][1]*matrix2[1][1])])(matrix1, matrix2),(lambda matrix1, matrix2 : [(matrix1[1][0]*matrix2[0][0])+(matrix1[1][1]*matrix2[1][0]), (matrix1[1][0]*matrix2[0][1])+(matrix1[1][1]*matrix2[1][1])])(matrix1,matrix2)])(matrix, matrixExponential(matrix,powerNumber-1))
 
 # 팩토리알을 구하는 함수
@@ -24,4 +24,4 @@ ePoweredByEmatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylor
 
 # e**eMatrix가 근사하는 값을 출력
 goTo = lambda x : [print(ePoweredByEmatrix(i),"\n") for i in x]
-goTo(range(1, 40))
+goTo(range(1, 25))

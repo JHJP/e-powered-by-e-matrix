@@ -16,7 +16,7 @@ generalTermOfTaylorE = lambda call : [(lambda count : [(lambda number11 : matrix
 def eRecursions(infinites):
     eRecursionArray=[]
     for i,j in [(0,0), (0,1), (1,0), (1,1)]:
-        element=lambda infinites :generalTermOfTaylorE(0)[i][j] if infinites==0 else generalTermOfTaylorE(infinites)[i][j]+a(infinites-1)
+        element=lambda infinites :generalTermOfTaylorE(0)[i][j] if infinites==0 else generalTermOfTaylorE(infinites)[i][j]+element(infinites-1)
         eRecursionArray.append(element(infinites))
     return eRecursionArray
     
