@@ -19,7 +19,7 @@ def eRecursions(infinites):
         element=lambda infinites :generalTermOfTaylorE(0)[i][j] if infinites==0 else generalTermOfTaylorE(infinites)[i][j]+element(infinites-1)
         eRecursionArray.append(element(infinites))
     return eRecursionArray
-    
+
 # eRecursions에서 구해진 각 항을 2x2매트릭스 형식으로 출력하는 함수
 def ePoweredByEmatrix(infinity):
     rowOneOfEPowered=[]
