@@ -36,26 +36,26 @@ eRecursion22 = lambda infinite : generalTermOfTaylorE(0)[1][1] if infinite==0 el
 ePoweredByEmatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylorE(0) if infinite11==0 else generalTermOfTaylorE(infinite11)[0][0]+eRecursion11(infinite11-1))(infinity), (lambda infinite12 : generalTermOfTaylorE(0) if infinite12==0 else generalTermOfTaylorE(infinite12)[0][1]+eRecursion12(infinite12-1))(infinity)], [(lambda infinite21 : generalTermOfTaylorE(0) if infinite21==0 else generalTermOfTaylorE(infinite21)[1][0]+eRecursion21(infinite21-1))(infinity), (lambda infinite22 : generalTermOfTaylorE(0) if infinite22==0 else generalTermOfTaylorE(infinite22)[1][1]+eRecursion22(infinite22-1))(infinity)]]
 
 #11 알려져 있는 [[0, -pi], [pi, 0]]을 이용하여 검산 
-# generalTermOfTaylorPi = lambda call : [(lambda count : [(lambda number11 : matrixExponential(piMatirx, number11)[0][0]/factorial(number11))(count), (lambda number12 : matrixExponential(piMatirx, number12)[0][1]/factorial(number12))(count)])(call), (lambda count : [(lambda number21 : matrixExponential(piMatirx, number21)[1][0]/factorial(number21))(count), (lambda number22 : matrixExponential(piMatirx, number22)[1][1]/factorial(number22))(count)])(call)]
+generalTermOfTaylorPi = lambda call : [(lambda count : [(lambda number11 : matrixExponential(piMatirx, number11)[0][0]/factorial(number11))(count), (lambda number12 : matrixExponential(piMatirx, number12)[0][1]/factorial(number12))(count)])(call), (lambda count : [(lambda number21 : matrixExponential(piMatirx, number21)[1][0]/factorial(number21))(count), (lambda number22 : matrixExponential(piMatirx, number22)[1][1]/factorial(number22))(count)])(call)]
 
-# piRecursion11 = lambda infinite : generalTermOfTaylorPi(0)[0][0] if infinite==0 else generalTermOfTaylorPi(infinite)[0][0]+piRecursion11(infinite-1)
-# piRecursion12 = lambda infinite : generalTermOfTaylorPi(0)[0][1] if infinite==0 else generalTermOfTaylorPi(infinite)[0][1]+piRecursion12(infinite-1)
-# piRecursion21 = lambda infinite : generalTermOfTaylorPi(0)[1][0] if infinite==0 else generalTermOfTaylorPi(infinite)[1][0]+piRecursion21(infinite-1)
-# piRecursion22 = lambda infinite : generalTermOfTaylorPi(0)[1][1] if infinite==0 else generalTermOfTaylorPi(infinite)[1][1]+piRecursion22(infinite-1)
+piRecursion11 = lambda infinite : generalTermOfTaylorPi(0)[0][0] if infinite==0 else generalTermOfTaylorPi(infinite)[0][0]+piRecursion11(infinite-1)
+piRecursion12 = lambda infinite : generalTermOfTaylorPi(0)[0][1] if infinite==0 else generalTermOfTaylorPi(infinite)[0][1]+piRecursion12(infinite-1)
+piRecursion21 = lambda infinite : generalTermOfTaylorPi(0)[1][0] if infinite==0 else generalTermOfTaylorPi(infinite)[1][0]+piRecursion21(infinite-1)
+piRecursion22 = lambda infinite : generalTermOfTaylorPi(0)[1][1] if infinite==0 else generalTermOfTaylorPi(infinite)[1][1]+piRecursion22(infinite-1)
 
-# ePoweredByPimatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylorPi(0) if infinite11==0 else generalTermOfTaylorPi(infinite11)[0][0]+piRecursion11(infinite11-1))(infinity), (lambda infinite12 : generalTermOfTaylorPi(0) if infinite12==0 else generalTermOfTaylorPi(infinite12)[0][1]+piRecursion12(infinite12-1))(infinity)], [(lambda infinite21 : generalTermOfTaylorPi(0) if infinite21==0 else generalTermOfTaylorPi(infinite21)[1][0]+piRecursion21(infinite21-1))(infinity), (lambda infinite22 : generalTermOfTaylorPi(0) if infinite22==0 else generalTermOfTaylorPi(infinite22)[1][1]+piRecursion22(infinite22-1))(infinity)]]
+ePoweredByPimatrix = lambda infinity : [[(lambda infinite11 : generalTermOfTaylorPi(0) if infinite11==0 else generalTermOfTaylorPi(infinite11)[0][0]+piRecursion11(infinite11-1))(infinity), (lambda infinite12 : generalTermOfTaylorPi(0) if infinite12==0 else generalTermOfTaylorPi(infinite12)[0][1]+piRecursion12(infinite12-1))(infinity)], [(lambda infinite21 : generalTermOfTaylorPi(0) if infinite21==0 else generalTermOfTaylorPi(infinite21)[1][0]+piRecursion21(infinite21-1))(infinity), (lambda infinite22 : generalTermOfTaylorPi(0) if infinite22==0 else generalTermOfTaylorPi(infinite22)[1][1]+piRecursion22(infinite22-1))(infinity)]]
 
-# goTo = lambda x : [print(ePoweredByPimatrix(i),"\n") for i in x]
-# goTo(range(1, 20))
+goTo = lambda x : [print(ePoweredByPimatrix(i),"\n") for i in x]
+goTo(range(1, 20))
 
 #11 e**x의 테일러급수는 e= 1/n!의 무한급수이므로 이것의 일반항 1/n!을 출력하는 함수
-# generalTermOfTaylorEOne = lambda number : 1/factorial(number)
+generalTermOfTaylorEOne = lambda number : 1/factorial(number)
 
 #12 e= 1/n!의 무한급수를 출력하는 재귀함수
-# ePoweredByOne = lambda infinite: generalTermOfTaylorEOne(0) if infinite==0 else generalTermOfTaylorEOne(infinite)+ePoweredByOne(infinite-1)
+ePoweredByOne = lambda infinite: generalTermOfTaylorEOne(0) if infinite==0 else generalTermOfTaylorEOne(infinite)+ePoweredByOne(infinite-1)
 
-# goTo = lambda x : [print(ePoweredByOne(i),"\n") for i in x]
-# goTo(range(1, 20))
+goTo = lambda x : [print(ePoweredByOne(i),"\n") for i in x]
+goTo(range(1, 20))
 
 
 # (검산) e**1의 테일러급수는 e= 1/n!의 무한급수이므로 이것의 일반항 1/n!을 출력하는 함수
