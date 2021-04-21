@@ -1,4 +1,5 @@
 from functools import reduce
+import random as r
  
 #1 피보나치수열을 출력하는 함수를 람다함수를 사용하여 작성
 numberOfFib =lambda numberOfFib: [(lambda elementOfSequence : (1/(5**0.5))*( ((1+5**0.5)/2)**(elementOfSequence+1)-((1-5**0.5)/2)**(elementOfSequence+1) ))(i) for i in range(numberOfFib)]
@@ -72,3 +73,4 @@ def ePoweredByOne(infinite):
 # e**1가 근사하는 값을 출력 
 goTo = lambda x : [print(ePoweredByOne(i),"\n") for i in x]
 print(goTo(range(1, 20)))
+
